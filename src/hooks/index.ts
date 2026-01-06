@@ -1,5 +1,11 @@
-export { useGetItemsAPI, useGetItemAPI, usePostAPI, useDeleteAPI } from "./useApi"
-export { useClickHandler } from "./useClickHandler"
-export { useCountdown } from "./useCountdown"
-export { useInfiniteScroll } from "./useInfiniteScroll"
-export { useLocalStorage } from "./useLocalStorage"
+export {
+  useGetItemsAPI,
+  useGetItemAPI,
+  usePostAPI,
+  useDeleteAPI,
+} from "./useApi";
+export { useClickHandler } from "./useClickHandler";
+export { useCountdown } from "./useCountdown";
+export { useInfiniteScroll } from "./useInfiniteScroll";
+export { useLocalStorage } from "./useLocalStorage";
+export { useClickOutside } from "./useClickOutside";

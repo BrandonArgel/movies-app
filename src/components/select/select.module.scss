@@ -1,20 +1,50 @@
 @use "styles/variables.scss";
 
-.select {
-	background: var(--gradient);
-	border: 1px solid var(--main-color);
-	border-radius: 1rem;
-	color: var(--main-color);
-	cursor: pointer;
-	display: inline-block;
-	font: variables.$fz-md variables.$font;
-	overflow-x: hidden;
-	padding: 0.5rem;
-	text-overflow: ellipsis;
-	width: 100%;
-	white-space: nowrap;
+.dropdown {
+  align-items: center;
+  background: var(--gradient);
+  border: 1px solid var(--main-color);
+  border-radius: 1rem;
+  display: flex;
+  position: relative;
 
-	&:active {
-		outline: none;
-	}
+  &::after {
+    color: var(--main-color);
+    content: "\25BC"; /* Flecha hacia abajo */
+    font-size: variables.$fz-sm;
+    font-weight: bold;
+    pointer-events: none;
+    position: absolute;
+    right: 0.5rem;
+    transition: transform 0.2s;
+  }
+
+  &.open::after {
+    transform: rotate(180deg); /* Flecha hacia arriba */
+  }
+
+  &:focus-within {
+    outline: 2px dashed var(--main-color);
+    outline-offset: 3px;
+  }
+
+  &__select {
+    appearance: none;
+    background: var(--gradient);
+    border: none;
+    border-radius: 1rem;
+    color: var(--main-color);
+    cursor: pointer;
+    font: variables.$fz-md variables.$font;
+    overflow-x: hidden;
+    padding: 0.5rem 2rem 0.5rem 0.5rem;
+    text-overflow: ellipsis;
+    width: 100%;
+    white-space: nowrap;
+
+    &:active,
+    &:focus {
+      outline: none;
+    }
+  }
 }
